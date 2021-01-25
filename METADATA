@@ -1,0 +1,17 @@
+name: "libfuzzer-sys"
+description:
+    "Barebones wrapper around LLVM's libFuzzer runtime library."
+
+third_party {
+  url {
+    type: HOMEPAGE
+    value: "https://crates.io/crates/libfuzzer-sys"
+  }
+  url {
+    type: ARCHIVE
+    value: "https://static.crates.io/crates/libfuzzer-sys/libfuzzer-sys-0.3.4.crate"
+  }
+  version: "0.3.4"
+  last_upgrade_date { year: 2020 month: 10 day: 5 }
+  license_type: NOTICE
+}
