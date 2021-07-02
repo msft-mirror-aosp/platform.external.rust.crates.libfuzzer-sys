@@ -43,6 +43,7 @@ rust_library_rlib {
     features: ["arbitrary-derive"],
     rustlibs: [
         "libarbitrary",
+        "libonce_cell",
     ],
 }
 
@@ -50,7 +51,8 @@ rust_library_rlib {
 //   arbitrary-1.0.1 "derive,derive_arbitrary"
 //   cc-1.0.68
 //   derive_arbitrary-1.0.1
+//   once_cell-1.8.0 "alloc,default,race,std"
 //   proc-macro2-1.0.27 "default,proc-macro"
 //   quote-1.0.9 "default,proc-macro"
-//   syn-1.0.72 "clone-impls,default,derive,parsing,printing,proc-macro,quote"
+//   syn-1.0.73 "clone-impls,default,derive,parsing,printing,proc-macro,quote"
 //   unicode-xid-0.2.2 "default"
