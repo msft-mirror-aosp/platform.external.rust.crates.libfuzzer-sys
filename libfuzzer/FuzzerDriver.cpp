@@ -159,14 +159,14 @@ static bool ParseOneFlag(const char *Param) {
     const char *Str = FlagValue(Param, Name);
     if (Str)  {
       if (FlagDescriptions[F].IntFlag) {
-        auto Val = MyStol(Str);
-        *FlagDescriptions[F].IntFlag = static_cast<int>(Val);
+        int Val = MyStol(Str);
+        *FlagDescriptions[F].IntFlag = Val;
         if (Flags.verbosity >= 2)
           Printf("Flag: %s %d\n", Name, Val);
         return true;
       } else if (FlagDescriptions[F].UIntFlag) {
-        auto Val = std::stoul(Str);
-        *FlagDescriptions[F].UIntFlag = static_cast<unsigned int>(Val);
+        unsigned int Val = std::stoul(Str);
+        *FlagDescriptions[F].UIntFlag = Val;
         if (Flags.verbosity >= 2)
           Printf("Flag: %s %u\n", Name, Val);
         return true;
@@ -789,8 +789,8 @@ int FuzzerDriver(int *argc, char ***argv, UserCallback Callback) {
   unsigned Seed = Flags.seed;
   // Initialize Seed.
   if (Seed == 0)
-    Seed = static_cast<unsigned>(
-        std::chrono::system_clock::now().time_since_epoch().count() + GetPid());
+    Seed =
+        std::chrono::system_clock::now().time_since_epoch().count() + GetPid();
   if (Flags.verbosity)
     Printf("INFO: Seed: %u\n", Seed);
 
