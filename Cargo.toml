@@ -12,7 +12,7 @@
 [package]
 edition = "2018"
 name = "libfuzzer-sys"
-version = "0.4.6"
+version = "0.4.7"
 authors = ["The rust-fuzz Project Developers"]
 description = "A wrapper around LLVM's libFuzzer runtime."
 readme = "./README.md"
@@ -37,3 +37,5 @@ features = ["parallel"]
 
 [features]
 arbitrary-derive = ["arbitrary/derive"]
+default = ["link_libfuzzer"]
+link_libfuzzer = []
